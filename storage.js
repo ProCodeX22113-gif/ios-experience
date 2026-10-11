@@ -1,7 +1,0 @@
-const PREFIX = 'iosxp:';
-export function getData(key, fallback) { try { const raw = localStorage.getItem(PREFIX + key); return raw === null ? fallback : JSON.parse(raw); } catch { return fallback; } }
-export function setData(key, value) { try { localStorage.setItem(PREFIX + key, JSON.stringify(value)); return true; } catch { return false; } }
-export function removeData(key) { try { localStorage.removeItem(PREFIX + key); } catch {} }
-export function exportAll() { const out = { format: 'ios-experience-backup', version: 1, exportedAt: new Date().toISOString(), data: {} }; for (let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k?.startsWith(PREFIX)){try{out.data[k.slice(PREFIX.length)] = JSON.parse(localStorage.getItem(k));}catch{}}} return out; }
-export function importAll(obj) { if (!obj || obj.format !== 'ios-experience-backup' || obj.version !== 1 || !obj.data || typeof obj.data !== 'object') throw new Error('This backup file is not supported.'); for (const [k,v] of Object.entries(obj.data)) { if (!/^[a-z0-9_-]{1,50}$/i.test(k)) continue; setData(k,v); } }
-export function downloadText(filename, text, type='text/plain') { const blob = new Blob([text], {type}); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href=url; a.download=filename; document.body.append(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1000); }
