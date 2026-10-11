@@ -1,0 +1,15 @@
+{
+  "id": "./",
+  "name": "iOS Experience - Personal Web Environment",
+  "short_name": "iOS Experience",
+  "description": "An iOS-inspired personal productivity web environment.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#111625",
+  "theme_color": "#101522",
+  "icons": [
+    {"src":"assets/icons/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}

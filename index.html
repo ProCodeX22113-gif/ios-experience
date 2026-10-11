@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101522"><meta name="description" content="An iOS-inspired personal productivity web environment for daily use and academic research."><title>iOS Experience</title>
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="app" class="wallpaper-aurora">
+<header class="status-bar"><span id="status-time">9:41</span><div class="status-right"><span aria-label="Mobile signal">▮▮▮</span><span aria-label="Wi-Fi">◔</span><span class="battery" aria-label="Battery indicator"></span></div></header>
+<main id="home-screen" class="home-screen">
+<section class="hero"><p id="date-label" class="date-label"></p><div id="clock" class="clock">9:41</div><div class="widget"><div><span class="eyebrow">YOUR DAY</span><h2 id="greeting">Good day.</h2><p id="widget-date">A little progress goes a long way.</p></div><span class="weather-symbol" aria-hidden="true">☀️</span></div></section>
+<div class="home-toolbar"><label class="search-pill"><span>⌕</span><input id="global-search" type="search" placeholder="Search apps, notes, tasks…" aria-label="Search apps, notes, and tasks"><kbd>↵</kbd></label><button class="glass-button" id="open-control" aria-label="Open Control Center">☷</button></div>
+<div id="search-results" class="search-results" hidden></div>
+<nav id="app-grid" class="app-grid" aria-label="Applications">
+<button class="app-launcher" data-app="notes"><span class="app-icon icon-notes">✎</span><span>Notes</span></button>
+<button class="app-launcher" data-app="tasks"><span class="app-icon icon-reminders">✓</span><span>Reminders</span></button>
+<button class="app-launcher" data-app="calendar"><span class="app-icon icon-calendar"><small id="calendar-month">OCT</small><b id="calendar-day">11</b></span><span>Calendar</span></button>
+<button class="app-launcher" data-app="calculator"><span class="app-icon icon-calculator">＋</span><span>Calculator</span></button>
+<button class="app-launcher" data-app="browser"><span class="app-icon icon-browser">◉</span><span>Browser</span></button>
+<button class="app-launcher" data-app="bookmarks"><span class="app-icon icon-bookmarks">★</span><span>Bookmarks</span></button>
+<button class="app-launcher" data-app="files"><span class="app-icon icon-files">▰</span><span>Files</span></button>
+<button class="app-launcher" data-app="music"><span class="app-icon icon-music">♫</span><span>Music</span></button>
+<button class="app-launcher" data-app="timer"><span class="app-icon icon-timer">◷</span><span>Timer</span></button>
+<button class="app-launcher" data-app="converter"><span class="app-icon icon-converter">⇄</span><span>Converter</span></button>
+<button class="app-launcher" data-app="settings"><span class="app-icon icon-settings">⚙</span><span>Settings</span></button>
+<button class="app-launcher" data-app="research"><span class="app-icon icon-research">⌘</span><span>About</span></button>
+</nav>
+<div class="page-dots" aria-label="Home screen page"><span class="active"></span><span></span></div>
+</main>
+<footer class="dock" aria-label="Favorite apps"><button class="app-launcher" data-app="browser" aria-label="Browser"><span class="app-icon icon-browser">◉</span></button><button class="app-launcher" data-app="notes" aria-label="Notes"><span class="app-icon icon-notes">✎</span></button><button class="app-launcher" data-app="tasks" aria-label="Reminders"><span class="app-icon icon-reminders">✓</span></button><button class="app-launcher" data-app="calculator" aria-label="Calculator"><span class="app-icon icon-calculator">＋</span></button></footer>
+<section id="app-window" class="app-window" aria-live="polite" hidden><header class="app-header"><button id="back-home" class="text-button">‹ Home</button><h1 id="app-title">Notes</h1><button id="app-action" class="text-button">＋</button></header><div id="app-content" class="app-content"></div><div class="home-indicator" id="home-indicator" role="button" tabindex="0" aria-label="Return home"></div></section>
+<section id="control-center" class="control-center" hidden aria-label="Control Center"><div class="sheet-handle"></div><div class="cc-heading"><h2>Control Center</h2><button id="close-control" class="round-button" aria-label="Close Control Center">✕</button></div><div class="cc-grid"><button class="cc-tile" data-toggle="airplane"><span>✈</span><b>Airplane mode</b><small>Shortcut only</small></button><button class="cc-tile" data-toggle="focus"><span>☾</span><b>Focus</b><small id="focus-state">Off</small></button><button class="cc-tile" id="cc-wifi"><span>⌁</span><b>Wi-Fi settings</b><small>Open device settings</small></button><button class="cc-tile" id="cc-bluetooth"><span>ᛒ</span><b>Bluetooth settings</b><small>Open device settings</small></button></div><div class="cc-slider"><label for="brightness">Display dimmer (web only)</label><input id="brightness" type="range" min="55" max="100" value="100"></div><div class="cc-slider"><label for="volume">Media volume (visual only)</label><input id="volume" type="range" min="0" max="100" value="70"></div><button class="wide-button" id="cc-notifications">Open notification center</button><p class="subtle">Web pages cannot directly toggle Android system radios, airplane mode, or system volume.</p></section>
+<section id="notification-center" class="notification-center" hidden><div class="cc-heading"><h2>Notifications</h2><button id="clear-notifications" class="text-button">Clear all</button></div><div id="notification-list"></div><p id="no-notifications" class="empty-state">You're all caught up.</p><button class="wide-button" id="close-notifications">Done</button></section>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</div>
+<script type="module" src="js/app.js"></script>
+</body></html>
